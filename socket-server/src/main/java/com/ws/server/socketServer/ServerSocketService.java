@@ -28,9 +28,9 @@ public class ServerSocketService implements InitializingBean {
 
     private final static Logger log = LoggerFactory.getLogger(ServerSocketService.class);
 
-    private Socket clientSocket;
+    private volatile Socket clientSocket;
 
-    private ServerSendThread sendThread;
+    private volatile ServerSendThread sendThread;
 
     @Value("${qxts.socket.port}")
     private int port;
